@@ -10,7 +10,7 @@ type Query {
 type Mutation {
   createStudent(cin: String!, nompre: String!, email: String!): Student
   updateStudent(cin:String, nompre:String, email:String): Boolean
-  deleteStudent(cin:String):Student
+  deleteStudent(cin:String):[Student]
 }
 
 

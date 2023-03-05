@@ -1,5 +1,7 @@
 package com.esprit.graphql;
 
+import java.util.List;
+
 import com.coxautodev.graphql.tools.GraphQLRootResolver;
 import com.esprit.entities.Student;
 import com.esprit.repository.StudentRepository;
@@ -16,9 +18,9 @@ public class Mutation implements GraphQLRootResolver {
 	    studentRepository.saveStudent(student);
 	    return student;
 	  }
-	  public Student deleteStudent(String cin) {
-		  this.studentRepository.deleteStudent(cin);
-		  return null;
+	  public  List<Student> deleteStudent(String cin) {
+		   this.studentRepository.deleteStudent(cin);
+		  return   this.studentRepository.getAllStudents();
 		}
 	  public Boolean updateStudent(String cin, String nompre, String email) {
 			Student s= new Student(cin,nompre,email);

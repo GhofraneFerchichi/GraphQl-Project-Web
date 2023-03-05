@@ -39,6 +39,7 @@ public class StudentRepository {
 		Student s = this.getStudentbycin(cin);
 		this.students.remove(s);
 		
+		
 	}
 	public int updateStudent(Student s) {
 		Student st = getStudentbycin(s.getCin());	
